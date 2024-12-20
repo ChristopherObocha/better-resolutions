@@ -11,6 +11,7 @@ interface AuthState {
   setSession: (session: Session | null) => void;
   initialize: () => Promise<void>;
   signOut: () => Promise<void>;
+  signUpWithEmail: (email: string, password: string, username: string) => Promise<void>;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -57,6 +58,20 @@ export const useAuthStore = create<AuthState>((set) => ({
       return;
     }
     set({ session: null, user: null });
+  },
+  signUpWithEmail: async (email: string, password: string, username: string) => {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { username },
+      },
+    });
+
+    if (error) {
+      console.error('Error signing up:', error.message);
+      throw error;
+    }
   },
 }));
 

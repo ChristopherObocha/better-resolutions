@@ -1,3 +1,4 @@
+import { Link, router } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, Pressable, TextInput } from 'react-native';
 
@@ -27,6 +28,8 @@ export default function AuthTest() {
     }
   };
 
+  // const handleSignUp = () => <Link href="/SignUpCard" />;
+
   return (
     <View className="m-2 border border-gray-300 p-4">
       <Text className="text-lg">
@@ -54,8 +57,20 @@ export default function AuthTest() {
           <Pressable onPress={handleSignIn} className="rounded-lg bg-blue-500 p-3">
             <Text className="text-center font-semibold text-white">Sign In</Text>
           </Pressable>
+
+          <Link href="/popup/signup" asChild>
+            <Pressable className="mt-2 rounded-lg bg-blue-500 p-3">
+              <Text className="text-center font-semibold text-white">Sign Up</Text>
+            </Pressable>
+          </Link>
         </View>
       )}
+      <Link href="/(tabs)">Go to Home</Link>
+      <Pressable
+        className="mt-2 rounded-lg bg-blue-500 p-3"
+        onPress={() => router.push('/(tabs)/two')}>
+        <Text className="text-center font-semibold text-white">Go to Tab Two</Text>
+      </Pressable>
     </View>
   );
 }
