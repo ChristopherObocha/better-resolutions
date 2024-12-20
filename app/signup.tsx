@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
 
-import { useAuthStore } from '../../stores/useAuthStore';
+import { useAuthStore } from '../stores/useAuthStore';
 
 export default function SignUp() {
   const [email, setEmail] = useState('');

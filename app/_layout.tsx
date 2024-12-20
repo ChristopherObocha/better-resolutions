@@ -40,7 +40,7 @@ export default function RootLayout() {
                 <Stack.Screen name="(tabs)" options={TABS_OPTIONS} />
                 <Stack.Screen name="modal" options={MODAL_OPTIONS} />
                 <Stack.Screen
-                  name="popup"
+                  name="signup"
                   options={{
                     presentation: 'modal',
                     animation: 'fade_from_bottom',

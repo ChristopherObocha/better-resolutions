@@ -58,7 +58,7 @@ export default function AuthTest() {
             <Text className="text-center font-semibold text-white">Sign In</Text>
           </Pressable>
 
-          <Link href="/popup/signup" asChild>
+          <Link href="/signup" asChild>
             <Pressable className="mt-2 rounded-lg bg-blue-500 p-3">
               <Text className="text-center font-semibold text-white">Sign Up</Text>
             </Pressable>
