@@ -3,7 +3,7 @@
     "name": "better-resolutions",
     "slug": "better-resolutions",
     "version": "1.0.0",
-    "scheme": "better-resolutions",
+    "scheme": "your-app-scheme",
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -31,9 +31,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.chrisobocha.betterresolutions"

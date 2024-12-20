@@ -7,6 +7,7 @@ interface AuthState {
   user: User | null;
   session: Session | null;
   loading: boolean;
+  signInWithEmail: (email: string, password: string) => Promise<void>;
   setSession: (session: Session | null) => void;
   initialize: () => Promise<void>;
 }
@@ -15,6 +16,21 @@ export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   session: null,
   loading: true,
+  signInWithEmail: async (email: string, password: string) => {
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) throw error;
+
+      // Session will be automatically updated through the subscription
+    } catch (error) {
+      console.error('Error signing in:', error);
+      throw error;
+    }
+  },
   setSession: (session) =>
     set({
       session,
