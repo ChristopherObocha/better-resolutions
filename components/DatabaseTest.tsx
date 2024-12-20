@@ -7,7 +7,7 @@ export default function DatabaseTest() {
   const [result, setResult] = useState('');
 
   const testQuery = async () => {
-    const { data, error } = await supabase.from('your_table_name').select('*').limit(1);
+    const { data, error } = await supabase.from('users').select('*').limit(1);
 
     if (error) {
       setResult(`Error: ${error.message}`);
