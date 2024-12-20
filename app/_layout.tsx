@@ -39,6 +39,13 @@ export default function RootLayout() {
               <Stack screenOptions={SCREEN_OPTIONS}>
                 <Stack.Screen name="(tabs)" options={TABS_OPTIONS} />
                 <Stack.Screen name="modal" options={MODAL_OPTIONS} />
+                <Stack.Screen
+                  name="signup"
+                  options={{
+                    presentation: 'modal',
+                    animation: 'fade_from_bottom',
+                  }}
+                />
               </Stack>
             </NavThemeProvider>
           </ActionSheetProvider>
