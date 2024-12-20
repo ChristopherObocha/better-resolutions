@@ -11,11 +11,13 @@ export default function AuthTest() {
   const signUpTest = async () => {
     try {
       const { data, error } = await supabase.auth.signUp({
-        email: 'test@example.com',
+        email: 'christopherobocha@gmail.com',
         password: 'testpassword123',
       });
 
-      if (error) throw error;
+      if (error) {
+        throw error;
+      }
       setUser(data.user);
     } catch (e) {
       if (e instanceof Error) {
