@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, Pressable, TextInput } from 'react-native';
 
 import { useAuthStore } from '../stores/useAuthStore';
+import { supabase } from '../utils/supabase';
 
 export default function AuthTest() {
   const { user, session, loading, signInWithEmail } = useAuthStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  console.log('AuthTest rendering:', { user, session, loading });
 
   if (loading) {
     return (

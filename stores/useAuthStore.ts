@@ -10,6 +10,7 @@ interface AuthState {
   signInWithEmail: (email: string, password: string) => Promise<void>;
   setSession: (session: Session | null) => void;
   initialize: () => Promise<void>;
+  signOut: () => Promise<void>;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -48,6 +49,14 @@ export const useAuthStore = create<AuthState>((set) => ({
     supabase.auth.onAuthStateChange((_event, session) => {
       set({ session, user: session?.user ?? null });
     });
+  },
+  signOut: async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error('Error signing out:', error.message);
+      return;
+    }
+    set({ session: null, user: null });
   },
 }));
 
