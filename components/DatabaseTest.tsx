@@ -5,9 +5,10 @@ import { supabase } from '../utils/supabase';
 
 export default function DatabaseTest() {
   const [result, setResult] = useState('');
+  // const
 
   const testQuery = async () => {
-    const { data, error } = await supabase.from('resolutions').select('*').limit(1);
+    const { data, error } = await supabase.from('profiles').select('*');
 
     if (error) {
       setResult(`Error: ${error.message}`);
