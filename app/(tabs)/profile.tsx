@@ -3,10 +3,13 @@ import { StyleSheet, View, Text } from 'react-native';
 
 import { ScreenContent } from '~/components/ScreenContent';
 import { useAuthStore } from '~/stores/useAuthStore';
+import { useProfileStore } from '~/stores/useProfileStore';
 
 export default function Profile() {
   const { user } = useAuthStore();
+  const { profile } = useProfileStore();
   console.log('user: ', user);
+  console.log('profile: ', profile);
 
   return (
     <>
