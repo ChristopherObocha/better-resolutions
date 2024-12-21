@@ -8,7 +8,7 @@ import { useProfileStore } from '~/stores/useProfileStore';
 export default function Profile() {
   const { user } = useAuthStore();
   const { profile } = useProfileStore();
-  console.log('user: ', user);
+  // console.log('user: ', user);
   console.log('profile: ', profile);
 
   return (
@@ -16,7 +16,7 @@ export default function Profile() {
       <Stack.Screen options={{ title: 'Profile' }} />
       <View style={styles.container}>
         <ScreenContent path="app/(tabs)/profile.tsx" title="Profile" />
-        <Text>{user?.email}</Text>
+        <Text>{profile?.username}</Text>
       </View>
     </>
   );
