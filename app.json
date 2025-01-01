@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "better-resolutions",
+    "name": "Better Resolutions",
     "slug": "better-resolutions",
     "version": "1.0.0",
     "scheme": "your-app-scheme",
@@ -17,7 +17,13 @@
           "launchMode": "most-recent"
         }
       ],
-      "expo-secure-store"
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
